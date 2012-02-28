@@ -1,0 +1,14 @@
+        <div id="user-info">
+          <ul>
+<% if user_signed_in? %>
+  <li>
+    Hello, Dear <strong><%= current_user.username %></strong>!
+    Maybe, you want to <%= link_to 'logout', main_app.destroy_user_session_path, :method => :delete %>?
+  </li>
+<% else %>
+  <li>
+    Hello Guest, maybe you want to <%= link_to 'Join us', main_app.new_user_registration_path %> or <%= link_to 'login', main_app.new_user_session_path %>?
+  </li>
+<% end %>
+          </ul>
+        </div>
